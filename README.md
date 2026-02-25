@@ -1,47 +1,40 @@
 # Temperature Monitoring System
 
 ## Problem Statement
-A temperature monitoring system is required to check whether the current
-temperature is within the acceptable range.
+A temperature monitoring system is required to simulate temperature readings
+received from an IoT sensor.
 
 The system should:
 - Accept minimum and maximum temperature limits
-- Accept current temperature values from the user
-- Compare the temperature with the limits
-- Display appropriate status messages
-- Stop monitoring when `-1` is entered
+- Generate random temperature values
+- Take readings at regular intervals
+- Calculate the average temperature
 
 ---
 
 ## Approach
-1. Take minimum and maximum temperature limits from the user.
-2. Start the monitoring process using a loop.
-3. Accept the current temperature from the user.
-4. Compare the entered temperature with the given limits.
-5. Display whether the temperature is normal, below, or above the limit.
-6. Stop the program when the user enters `-1`.
+1. Take maximum and minimum temperature limits from the user.
+2. Ask the user for the number of temperature readings.
+3. Generate random temperature values within the given range.
+4. Display each temperature reading.
+5. Calculate the average (mean) of the readings.
+6. Display the experimental average temperature.
 
 ---
 
 ## Sample Output
 
-Enter minimum temperature limit: 20  
-Enter maximum temperature limit: 30  
+Enter maximum temperature in Celsius: 35  
+Enter minimum temperature in Celsius: 20  
+Enter number of readings to take: 5  
 
-Temperature Monitoring Started  
-Enter -1 to stop the program  
+READING 1 : The temperature is : 24.0 C  
+READING 2 : The temperature is : 31.0 C  
+READING 3 : The temperature is : 27.0 C  
+READING 4 : The temperature is : 22.0 C  
+READING 5 : The temperature is : 30.0 C  
 
-Enter current temperature: 18  
-Status: Temperature is BELOW minimum limit  
-
-Enter current temperature: 25  
-Status: Temperature is NORMAL  
-
-Enter current temperature: 35  
-Status: Temperature is ABOVE maximum limit  
-
-Enter current temperature: -1  
-Monitoring Stopped  
+Experimental value obtained : 26.8 C  
 
 ---
 
