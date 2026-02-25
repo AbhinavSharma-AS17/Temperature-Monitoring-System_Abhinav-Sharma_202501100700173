@@ -1,29 +1,23 @@
-# Temperature Monitoring System
+import random
+import time
 
-# Input minimum and maximum temperature limits
-min_temp = int(input("Enter minimum temperature limit: "))
-max_temp = int(input("Enter maximum temperature limit: "))
+# Take maximum temperature limit
+max = int(input("Enter maximum temperature in Celsius: "))
 
-print("\nTemperature Monitoring Started")
-print("Enter -1 to stop the program\n")
+# Take minimum temperature limit
+min = int(input("Enter minimum temperature in Celsius: "))
 
-# Loop to keep checking temperature
-while True:
-    
-    # Input current temperature
-    temp = int(input("Enter current temperature: "))
+# Number of temperature readings to take
+r = int(input("Enter number of readings to take: "))
 
-    # Stop condition
-    if temp == -1:
-        print("Monitoring Stopped")
-        break
+mean = 0  # To store sum of temperatures
 
-    # Compare temperature with limits
-    if temp < min_temp:
-        print("Status: Temperature is BELOW minimum limit \n")
+# Generate temperature readings
+for i in range(1, r + 1):
+    a = random.randint(min, max)  # Generate random temperature
+    print("READING", i, ": The temperature is:", float(a), "C")
+    mean = mean + a               # Add temperature to sum
+    time.sleep(2)                 # Wait for 2 seconds
 
-    elif temp > max_temp:
-        print("Status: Temperature is ABOVE maximum limit \n")
-
-    else:
-        print("Status: Temperature is NORMAL \n")
+# Display average temperature
+print("Experimental value obtained:", mean / r, "C")
